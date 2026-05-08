@@ -1,0 +1,640 @@
+/* ===========================
+   CONSULTATION PAGE STYLES
+   =========================== */
+
+/* Nav adjustments for sub-pages */
+.nav-scrolled-default {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(99, 164, 168, 0.2);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.navbar-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+}
+
+html[dir="rtl"] .navbar-nav-right {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* ===========================
+   HERO
+   =========================== */
+.consult-hero {
+    min-height: 44vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #0d2c2d 100%);
+    padding: 120px 5% 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.consult-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(99,164,168,0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.consult-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+}
+
+.consult-hero-badge {
+    display: inline-block;
+    background: rgba(99, 164, 168, 0.15);
+    border: 1px solid rgba(99, 164, 168, 0.4);
+    color: #63a4a8;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.2rem;
+}
+
+.consult-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+}
+
+.consult-hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    max-width: 55ch;
+    margin: 0 auto 1.8rem;
+}
+
+.consult-hero-perks {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.perk-tag {
+    background: rgba(99,164,168,0.1);
+    border: 1px solid rgba(99,164,168,0.3);
+    color: #a8d8db;
+    padding: 0.35rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ===========================
+   FORM SECTION LAYOUT
+   =========================== */
+.consult-form-section {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 5% 5rem;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .consult-form-section {
+        grid-template-columns: 1fr;
+    }
+    .consult-info-panel {
+        order: -1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* ===========================
+   FORM WRAPPER
+   =========================== */
+.consult-form-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid #eef0f0;
+}
+
+body.dark-mode .consult-form-wrapper {
+    background: #111111;
+    border-color: #222;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+
+.form-header {
+    background: linear-gradient(135deg, #63a4a8 0%, #4a8a8e 100%);
+    padding: 2rem 2.5rem;
+    color: #ffffff;
+}
+
+.form-header h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+}
+
+.form-header p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    color: #ffffff;
+}
+
+/* ===========================
+   FORM FIELDS
+   =========================== */
+.consult-form {
+    padding: 2rem 2.5rem;
+}
+
+.form-section-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #63a4a8;
+    margin: 1.8rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(99,164,168,0.15);
+}
+
+.form-section-title:first-of-type {
+    margin-top: 0;
+}
+
+.form-row {
+    margin-bottom: 1.25rem;
+}
+
+.form-row.two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .form-row.two-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #333;
+}
+
+body.dark-mode .form-group label {
+    color: #ccc;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: #fafafa;
+    color: #111;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    outline: none;
+    width: 100%;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background: #1a1a1a;
+    border-color: #333;
+    color: #f0f0f0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #63a4a8;
+    box-shadow: 0 0 0 3px rgba(99,164,168,0.15);
+    background: #fff;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group select:focus,
+body.dark-mode .form-group textarea:focus {
+    background: #111;
+}
+
+.form-group.success input,
+.form-group.success select {
+    border-color: #22c55e;
+}
+
+.form-group.error input,
+.form-group.error select {
+    border-color: #ef4444;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.required {
+    color: #ef4444;
+    font-weight: 900;
+}
+
+.optional {
+    color: #999;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.field-error {
+    font-size: 0.8rem;
+    color: #ef4444;
+    display: none;
+}
+
+.form-group.error .field-error {
+    display: block;
+}
+
+/* ===========================
+   SUBMIT BUTTON
+   =========================== */
+.form-submit-row {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.4);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.submit-note {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+}
+
+/* ===========================
+   ERROR BANNER
+   =========================== */
+.form-error-banner {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.25);
+    color: #ef4444;
+    padding: 0.9rem 1.2rem;
+    border-radius: 8px;
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ===========================
+   SUCCESS STATE
+   =========================== */
+.success-state {
+    padding: 3rem 2.5rem;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.success-state h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #22c55e;
+    margin-bottom: 0.75rem;
+}
+
+.success-state p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 55ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.dark-mode .success-state p {
+    color: #aaa;
+}
+
+.success-details {
+    background: rgba(99,164,168,0.08);
+    border: 1px solid rgba(99,164,168,0.2);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.8rem;
+    text-align: start;
+    font-size: 0.92rem;
+    line-height: 1.9;
+    color: #333;
+}
+
+body.dark-mode .success-details {
+    color: #ccc;
+}
+
+.success-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===========================
+   INFO PANEL
+   =========================== */
+.consult-info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.info-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    border: 1px solid #eef0f0;
+}
+
+body.dark-mode .info-card {
+    background: #111;
+    border-color: #222;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+}
+
+.info-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.info-card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 0.75rem;
+}
+
+body.dark-mode .info-card h3 {
+    color: #eee;
+}
+
+.info-card p {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .info-card p {
+    color: #999;
+}
+
+.info-steps {
+    padding-left: 1.2rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+html[dir="rtl"] .info-steps {
+    padding-left: 0;
+    padding-right: 1.2rem;
+}
+
+.info-steps li {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+body.dark-mode .info-steps li {
+    color: #aaa;
+}
+
+/* WhatsApp button */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #25d366;
+    color: #ffffff !important;
+    padding: 0.65rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-whatsapp:hover {
+    background: #1db954;
+    transform: translateY(-1px);
+}
+
+/* Plans mini list */
+.mini-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(99,164,168,0.1);
+    font-size: 0.88rem;
+}
+
+.mini-plan:last-of-type {
+    border-bottom: none;
+}
+
+.mini-plan-name {
+    font-weight: 700;
+    color: #333;
+}
+
+body.dark-mode .mini-plan-name {
+    color: #ddd;
+}
+
+.mini-plan-price {
+    color: #63a4a8;
+    font-weight: 600;
+}
+
+.featured-plan .mini-plan-name {
+    color: #63a4a8;
+}
+
+.link-see-plans {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: #63a4a8;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-see-plans:hover {
+    color: #4a8a8e;
+    text-decoration: underline;
+}
+
+/* ===========================
+   UTILITIES
+   =========================== */
+.hidden {
+    display: none !important;
+}
+
+/* ===========================
+   GLOBAL BUTTON ADDITIONS
+   =========================== */
+
+/* btn-book is defined in style.css; these extend it for this page */
+.btn-book {
+    background: linear-gradient(135deg, #63a4a8 0%, #4a8a8e 100%);
+    color: #ffffff;
+    border: 2px solid transparent;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-book:hover {
+    background: linear-gradient(135deg, #4a8a8e 0%, #3a7a7e 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99,164,168,0.4);
+    color: #ffffff;
+}
+
+/* ===========================
+   DARK MODE OVERRIDES
+   =========================== */
+body.dark-mode .consult-hero {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 40%, #061819 100%);
+}
+
+body.dark-mode .form-header {
+    background: linear-gradient(135deg, #3a7a7e 0%, #2d6669 100%);
+}
+
+body.dark-mode .consult-form-wrapper {
+    border-color: #2a2a2a;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+    .consult-hero {
+        padding: 100px 5% 50px;
+        min-height: auto;
+    }
+
+    .consult-hero h1 {
+        font-size: 2rem;
+    }
+
+    .consult-form {
+        padding: 1.5rem;
+    }
+
+    .form-header {
+        padding: 1.5rem;
+    }
+
+    .success-state {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .consult-form-section {
+        padding: 2rem 4% 4rem;
+    }
+
+    .consult-hero-perks {
+        gap: 0.5rem;
+    }
+
+    .perk-tag {
+        font-size: 0.78rem;
+    }
+
+    .success-actions {
+        flex-direction: column;
+    }
+
+    .success-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
