@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Hamzauy Coaching</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/media/favicon/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/media/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#63a4a8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="payment-header">
+        <div class="container">
+            <a href="../index.html" class="logo">Hamzauy Coaching</a>
+            <div class="secure-badge">
+                <span>🔒</span>
+                <span data-en="Secure Checkout" data-ar="دفع آمن">دفع آمن</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="payment-main">
+        <div class="container">
+            <div class="checkout-grid">
+                <!-- Left Column - Forms -->
+                <div class="checkout-forms">
+                    <!-- Step 1: Shipping Information -->
+                    <section class="checkout-section">
+                        <div class="section-header">
+                            <span class="step-number">1</span>
+                            <h2 data-en="Shipping Information" data-ar="معلومات الشحن">معلومات الشحن</h2>
+                        </div>
+                        <form id="shippingForm" class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="fullName" data-en="Full Name *" data-ar="الاسم الكامل *">الاسم الكامل *</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-en="Email *" data-ar="البريد الإلكتروني *">البريد الإلكتروني *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-en="Phone Number *" data-ar="رقم الهاتف *">رقم الهاتف *</label>
+                                <input type="tel" id="phone" name="phone" required pattern="^01[0-9]{9}$" placeholder="01XXXXXXXXX">
+                                <small class="input-help" data-en="Must be 11 digits starting with 01" data-ar="يجب أن يكون 11 رقماً يبدأ بـ 01">يجب أن يكون 11 رقماً يبدأ بـ 01</small>
+                                <small class="input-error" id="phoneError" data-en="Phone number must be 11 digits starting with 01" data-ar="رقم الهاتف يجب أن يكون 11 رقماً يبدأ بـ 01">رقم الهاتف يجب أن يكون 11 رقماً يبدأ بـ 01</small>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="address" data-en="Address *" data-ar="العنوان *">العنوان *</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city" data-en="City *" data-ar="المدينة *">المدينة *</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country" data-en="Country *" data-ar="الدولة *">الدولة *</label>
+                                <select id="country" name="country" required>
+                                    <option value="" data-en="Select Country" data-ar="اختر الدولة">اختر الدولة</option>
+                                    <option value="EG" selected data-en="Egypt" data-ar="مصر">مصر</option>
+                                    <option value="SA" data-en="Saudi Arabia" data-ar="السعودية">السعودية</option>
+                                    <option value="AE" data-en="UAE" data-ar="الإمارات">الإمارات</option>
+                                    <option value="US" data-en="United States" data-ar="الولايات المتحدة">الولايات المتحدة</option>
+                                    <option value="UK" data-en="United Kingdom" data-ar="المملكة المتحدة">المملكة المتحدة</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="notes" data-en="Additional Notes (Optional)" data-ar="ملاحظات إضافية (اختياري)">ملاحظات إضافية (اختياري)</label>
+                                <textarea id="notes" name="notes" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Step 2: Choose Plan -->
+                    <section class="checkout-section">
+                        <div class="section-header">
+                            <span class="step-number">2</span>
+                            <h2 data-en="Choose Your Plan" data-ar="اختر خطتك">اختر خطتك</h2>
+                        </div>
+                        <div class="plans-selection">
+                            <div class="plan-option" data-plan="regular" data-price="800">
+                                <input type="radio" id="planRegular" name="plan" value="regular">
+                                <label for="planRegular">
+                                    <div class="plan-header">
+                                        <h3 data-en="Regular" data-ar="عادي">عادي</h3>
+                                        <div class="plan-price">800 <span data-en="EGP" data-ar="جنيه">جنيه</span></div>
+                                    </div>
+                                    <ul class="plan-features">
+                                        <li data-en="Customized diet plan" data-ar="نظام غذائي مخصص">نظام غذائي مخصص</li>
+                                        <li data-en="Training program" data-ar="برنامج تدريبي">برنامج تدريبي</li>
+                                        <li data-en="Weekly follow-up" data-ar="متابعة أسبوعية">متابعة أسبوعية</li>
+                                        <li data-en="48-hour delivery" data-ar="تسليم خلال 48 ساعة">تسليم خلال 48 ساعة</li>
+                                    </ul>
+                                </label>
+                            </div>
+                            
+                            <div class="plan-option featured" data-plan="advanced" data-price="1400">
+                                <input type="radio" id="planAdvanced" name="plan" value="advanced" checked>
+                                <label for="planAdvanced">
+                                    <span class="popular-badge" data-en="Popular" data-ar="الأكثر شعبية">الأكثر شعبية</span>
+                                    <div class="plan-header">
+                                        <h3 data-en="Advanced" data-ar="متقدم">متقدم</h3>
+                                        <div class="plan-price">1400 <span data-en="EGP" data-ar="جنيه">جنيه</span></div>
+                                    </div>
+                                    <ul class="plan-features">
+                                        <li data-en="All Regular features" data-ar="جميع مميزات العادي">جميع مميزات العادي</li>
+                                        <li data-en="Daily follow-up" data-ar="متابعة يومية">متابعة يومية</li>
+                                        <li data-en="Priority response" data-ar="أولوية في الرد">أولوية في الرد</li>
+                                        <li data-en="24-hour delivery" data-ar="تسليم خلال 24 ساعة">تسليم خلال 24 ساعة</li>
+                                        <li data-en="Weekly video call" data-ar="مكالمة فيديو أسبوعية">مكالمة فيديو أسبوعية</li>
+                                    </ul>
+                                </label>
+                            </div>
+                            
+                            <div class="plan-option" data-plan="vip" data-price="1800">
+                                <input type="radio" id="planVip" name="plan" value="vip">
+                                <label for="planVip">
+                                    <div class="plan-header">
+                                        <h3 data-en="VIP" data-ar="VIP">VIP</h3>
+                                        <div class="plan-price">1800 <span data-en="EGP" data-ar="جنيه">جنيه</span></div>
+                                    </div>
+                                    <ul class="plan-features">
+                                        <li data-en="All Advanced features" data-ar="جميع مميزات المتقدم">جميع مميزات المتقدم</li>
+                                        <li data-en="Premium support" data-ar="دعم مميز">دعم مميز</li>
+                                        <li data-en="Exclusive content" data-ar="محتوى حصري">محتوى حصري</li>
+                                        <li data-en="Immediate delivery" data-ar="تسليم فوري">تسليم فوري</li>
+                                    </ul>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Step 3: Payment Method -->
+                    <section class="checkout-section">
+                        <div class="section-header">
+                            <span class="step-number">3</span>
+                            <h2 data-en="Payment Method" data-ar="طريقة الدفع">طريقة الدفع</h2>
+                        </div>
+                        <div class="payment-methods">
+                            <div class="payment-option">
+                                <input type="radio" id="paymentInstapay" name="paymentMethod" value="instapay" checked>
+                                <label for="paymentInstapay">
+                                    <div class="payment-icon">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/1936/1936112.png" alt="Payment" style="width: 40px; height: 40px;">
+                                    </div>
+                                    <div class="payment-info">
+                                        <h4 data-en="InstaPay / Wallet" data-ar="إنستاباي / المحفظة">إنستاباي / المحفظة</h4>
+                                        <p data-en="Fast & secure mobile payment" data-ar="دفع سريع وآمن عبر الموبايل">دفع سريع وآمن عبر الموبايل</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Complete Checkout Button -->
+                    <button class="btn-checkout" id="completeCheckout" data-en="Complete Purchase" data-ar="إتمام الشراء">
+                        إتمام الشراء
+                    </button>
+                </div>
+
+                <!-- Right Column - Order Summary -->
+                <div class="order-summary-wrapper">
+                    <div class="order-summary sticky">
+                        <h3 data-en="Order Summary" data-ar="ملخص الطلب">ملخص الطلب</h3>
+                        
+                        <div class="summary-item">
+                            <span data-en="Plan:" data-ar="الخطة:">الخطة:</span>
+                            <span id="summaryPlan" data-en="Advanced" data-ar="متقدم">متقدم</span>
+                        </div>
+                        
+                        <div class="summary-divider"></div>
+                        
+                        <div class="summary-item">
+                            <span data-en="Subtotal:" data-ar="المجموع الفرعي:">المجموع الفرعي:</span>
+                            <span id="summarySubtotal">1400 <span data-en="EGP" data-ar="جنيه">جنيه</span></span>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <span data-en="Tax:" data-ar="الضريبة:">الضريبة:</span>
+                            <span>0 <span data-en="EGP" data-ar="جنيه">جنيه</span></span>
+                        </div>
+                        
+                        <div class="summary-divider"></div>
+                        
+                        <div class="summary-total">
+                            <span data-en="Total:" data-ar="الإجمالي:">الإجمالي:</span>
+                            <span id="summaryTotal">1400 <span data-en="EGP" data-ar="جنيه">جنيه</span></span>
+                        </div>
+                        
+                        <div class="summary-features">
+                            <h4 data-en="What's Included:" data-ar="ما يشمله:">ما يشمله:</h4>
+                            <ul id="summaryFeatures">
+                                <li data-en="✓ All Regular features" data-ar="✓ جميع مميزات العادي">✓ جميع مميزات العادي</li>
+                                <li data-en="✓ Daily follow-up" data-ar="✓ متابعة يومية">✓ متابعة يومية</li>
+                                <li data-en="✓ Priority response" data-ar="✓ أولوية في الرد">✓ أولوية في الرد</li>
+                                <li data-en="✓ 24-hour delivery" data-ar="✓ تسليم خلال 24 ساعة">✓ تسليم خلال 24 ساعة</li>
+                                <li data-en="✓ Weekly video call" data-ar="✓ مكالمة فيديو أسبوعية">✓ مكالمة فيديو أسبوعية</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="trust-badges">
+                            <div class="badge" data-en="🔒 Secure Payment" data-ar="🔒 دفع آمن">🔒 دفع آمن</div>
+                            <div class="badge" data-en="✓ Money-Back Guarantee" data-ar="✓ ضمان استرجاع المال">✓ ضمان استرجاع المال</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Payment Modal -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 data-en="Complete Payment" data-ar="إتمام الدفع">إتمام الدفع</h2>
+            <p class="modal-subtitle" data-en="Choose your payment method" data-ar="اختر طريقة الدفع">اختر طريقة الدفع</p>
+            
+            <!-- Payment Method Tabs -->
+            <div class="payment-tabs">
+                <button class="payment-tab active" data-method="instapay">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0GAwFQ9YVE-NRs1xwrGjVGo1mZnCDqpFfxQ&s" alt="InstaPay" class="tab-icon">
+                    <span data-en="InstaPay" data-ar="إنستاباي">إنستاباي</span>
+                </button>
+                <button class="payment-tab" data-method="wallet">
+                    <img src="https://cdn-icons-png.flaticon.com/512/9548/9548542.png" alt="Wallet" class="tab-icon">
+                    <span data-en="Wallet" data-ar="محفظة">محفظة</span>
+                </button>
+            </div>
+            
+            <!-- InstaPay Section -->
+            <div class="payment-tab-content active" id="instapay-content">
+                <p class="tab-instruction" data-en="Follow these steps to complete your payment:" data-ar="اتبع هذه الخطوات لإتمام الدفع:">اتبع هذه الخطوات لإتمام الدفع:</p>
+                
+                <!-- Payment Steps -->
+                <div class="payment-steps">
+                    <div class="payment-step">
+                        <div class="step-number-small">1</div>
+                        <p data-en="Send payment using InstaPay by scanning or press on the QR code" data-ar="أرسل الدفع باستخدام إنستاباي عن طريق مسح أو أضغط على رمز QR">أرسل الدفع باستخدام إنستاباي عن طريق مسح رمز QR</p>
+                    </div>
+                    <div class="payment-step">
+                        <div class="step-number-small">2</div>
+                        <p data-en="Take a screenshot of the payment confirmation" data-ar="التقط لقطة شاشة لتأكيد الدفع">التقط لقطة شاشة لتأكيد الدفع</p>
+                    </div>
+                    <div class="payment-step">
+                        <div class="step-number-small">3</div>
+                        <p data-en="Click the button below to send the screenshot via WhatsApp" data-ar="انقر على الزر أدناه لإرسال لقطة الشاشة عبر واتساب">انقر على الزر أدناه لإرسال لقطة الشاشة عبر واتساب</p>
+                    </div>
+                </div>
+                
+                <div class="qr-code">
+                    <a href="https://ipn.eg/S/hamzauyfit/instapay/40l0jN" target="_blank" rel="noopener">
+                        <img src="../media/instaqr.jpg" alt="InstaPay QR Code" class="qr-image">
+                    </a>
+                </div>
+                
+                <div class="payment-instructions">
+                    <p data-en="Amount to pay:" data-ar="المبلغ المطلوب:">المبلغ المطلوب:</p>
+                    <strong id="modalAmount">1400 <span data-en="EGP" data-ar="جنيه">جنيه</span></strong>
+                </div>
+            </div>
+            
+            <!-- Wallet Section -->
+            <div class="payment-tab-content" id="wallet-content">
+                <p class="tab-instruction" data-en="Follow these steps to complete your payment:" data-ar="اتبع هذه الخطوات لإتمام الدفع:">اتبع هذه الخطوات لإتمام الدفع:</p>
+                
+                <!-- Payment Steps -->
+                <div class="payment-steps">
+                    <div class="payment-step">
+                        <div class="step-number-small">1</div>
+                        <p data-en="Send payment to the wallet number below" data-ar="أرسل الدفع إلى رقم المحفظة أدناه">أرسل الدفع إلى رقم المحفظة أدناه</p>
+                    </div>
+                    <div class="payment-step">
+                        <div class="step-number-small">2</div>
+                        <p data-en="Take a screenshot of the payment confirmation" data-ar="التقط لقطة شاشة لتأكيد الدفع">التقط لقطة شاشة لتأكيد الدفع</p>
+                    </div>
+                    <div class="payment-step">
+                        <div class="step-number-small">3</div>
+                        <p data-en="Click the button below to send the screenshot via WhatsApp" data-ar="انقر على الزر أدناه لإرسال لقطة الشاشة عبر واتساب">انقر على الزر أدناه لإرسال لقطة الشاشة عبر واتساب</p>
+                    </div>
+                </div>
+                
+                <div class="wallet-info">
+                    <div class="wallet-number-display">
+                        <span class="wallet-label" data-en="Wallet Number:" data-ar="رقم المحفظة:">رقم المحفظة:</span>
+                        <div class="wallet-number-box">
+                            <strong class="wallet-number">01107543359</strong>
+                            <button class="copy-btn" id="copyWalletBtn" type="button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span class="copy-text" data-en="Copy" data-ar="نسخ">نسخ</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-instructions">
+                    <p data-en="Amount to pay:" data-ar="المبلغ المطلوب:">المبلغ المطلوب:</p>
+                    <strong id="modalAmountWallet">1400 <span data-en="EGP" data-ar="جنيه">جنيه</span></strong>
+                </div>
+            </div>
+            
+            <button class="btn-whatsapp" id="confirmPayment">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                <span data-en="Send Screenshot via WhatsApp" data-ar="إرسال لقطة الشاشة عبر واتساب">إرسال لقطة الشاشة عبر واتساب</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="payment-en.js"></script>
+</body>
+</html>
