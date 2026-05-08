@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Plan - Hamzauy Coaching</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/media/favicon/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/media/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#63a4a8">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .free-plan-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 2rem;
+        }
+
+        .free-plan-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .free-plan-hero .badge-free {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            color: #000000;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+            animation: pulse-glow 2s infinite;
+        }
+
+        .free-plan-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #63a4a8;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+            line-height: 1.8;
+        }
+
+        body.dark-mode .section-subtitle {
+            color: #aaa;
+        }
+
+        .plan-details {
+            background: #ffffff;
+            border-left: 4px solid #63a4a8;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 0 auto 3rem;
+            max-width: 900px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        body.dark-mode .plan-details {
+            background: #1a1a1a;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .plan-details h3 {
+            color: #63a4a8;
+            font-size: 1.35rem;
+            margin: 0 0 0.75rem;
+            font-weight: 800;
+        }
+
+        .plan-details p {
+            margin: 0 0 1.25rem;
+            line-height: 1.9;
+            color: #333333;
+            font-size: 1.05rem;
+        }
+
+        .plan-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        body.dark-mode .plan-details p {
+            color: #dddddd;
+        }
+
+        .features-grid-free {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card-free {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            text-align: center;
+            border-left: 4px solid #63a4a8;
+        }
+
+        body.dark-mode .feature-card-free {
+            background: #1a1a1a;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card-free:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(99, 164, 168, 0.3);
+        }
+
+        .feature-card-free .icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card-free h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 1rem;
+        }
+
+        body.dark-mode .feature-card-free h3 {
+            color: #ffffff;
+        }
+
+        .feature-card-free p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        body.dark-mode .feature-card-free p {
+            color: #aaa;
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, #63a4a8, #4a8a8e);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            color: #ffffff;
+            margin: 4rem 0;
+            box-shadow: 0 10px 40px rgba(99, 164, 168, 0.3);
+        }
+
+        .download-section h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .download-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .btn-download-free {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            color: #000000;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn-download-free:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.7);
+            background: linear-gradient(135deg, #ffed4e, #ffb700);
+        }
+
+        .btn-download-free svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .note-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        body.dark-mode .note-box {
+            background: #3a3a1a;
+            border-color: #ffa500;
+        }
+
+        .note-box p {
+            color: #856404;
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        body.dark-mode .note-box p {
+            color: #ffd700;
+        }
+
+        .back-link-section {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .back-link-section a {
+            color: #63a4a8;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .back-link-section a:hover {
+            color: #4a8a8e;
+        }
+
+        @media (max-width: 768px) {
+            .free-plan-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid-free {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-download-free {
+                width: 100%;
+                justify-content: center;
+                padding: 1.2rem 2rem;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-logo">Hamzauy Coaching</div>
+
+        <button class="navbar-toggler collapsed" type="button" id="navbarToggle">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarContent">
+            <!-- <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#pricing">Plans</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#reviews">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#faq">FAQ</a>
+                </li>
+            </ul> -->
+
+            <div class="navbar-controls">
+                <!-- <button id="darkModeToggle" class="toggle-btn">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </button> -->
+                <a href="free-plan-ar.html" class="toggle-btn lang-btn">
+                    <span class="lang-text">AR</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="free-plan-hero">
+        <div>
+            <h1>🎁 Free Plan</h1>
+            <div class="badge-free">✨ 100% Free</div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div class="free-plan-content">
+        <h2 class="section-title">Start Your Journey Today!</h2>
+        <p class="section-subtitle">Get a comprehensive guide to transform your life for free - Everything you need to
+            start in one page</p>
+
+        <div class="plan-details">
+            <h3>Free Training Program:</h3>
+            <p>This is a non-paid training program designed to help young men and women who cannot afford paid plans continue training and taking care of their health. It is suitable for most trainees based on average physical ability. Click on each exercise name and you will find ready videos explaining proper form, reps, and sets.</p>
+            <h3>Who Is It For?</h3>
+            <p>Suitable for underweight and overweight individuals, and for people with mild to moderate disc issues.</p>
+        </div>
+
+        <!-- Features Grid -->
+        <!-- <div class="features-grid-free">
+            <div class="feature-card-free">
+                <div class="icon">🍎</div>
+                <h3>Basic Diet Plan</h3>
+                <p>A simplified and effective nutrition plan to get started</p>
+            </div>
+
+            <div class="feature-card-free">
+                <div class="icon">💪</div>
+                <h3>Basic Exercises</h3>
+                <p>Beginner-friendly workout program for home</p>
+            </div>
+
+            <div class="feature-card-free">
+                <div class="icon">📋</div>
+                <h3>Important Tips</h3>
+                <p>Guidelines and tips to achieve the best results</p>
+            </div>
+
+            <div class="feature-card-free">
+                <div class="icon">⏱️</div>
+                <h3>Time Schedule</h3>
+                <p>Clear plan to organize your day</p>
+            </div> -->
+        </div>
+
+        <!-- Download Section -->
+        <div class="download-section">
+            <h2>📥 Download Free Plan Now</h2>
+            <p>Comprehensive PDF file containing everything you need to start</p>
+            <a href="free-plan.pdf" class="btn-download-free" download>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                </svg>
+                <span>Download Free Plan</span>
+            </a>
+        </div>
+
+        <!-- Note Box -->
+        <div class="note-box">
+            <p>💡 Tip: After applying the free plan, you can move to paid plans for personal follow-up and faster
+                results</p>
+        </div>
+
+        <!-- Back Link -->
+        <div class="back-link-section">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/201557403075" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
